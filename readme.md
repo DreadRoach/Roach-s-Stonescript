@@ -7,3 +7,5 @@ There are three ways you can use these scripts:
 2: On mobile, you can import them directly from the Github. This is a bit more complicated, so you may need to seek help on how to do this.
 
 3: On PC or mobile, you can paste scripts directly into the Mind Stone. You can do so as many times as you want, but keep in mind, too many scripts can become difficult to manage.
+
+Note: These scripts are works in progress and may be updated as time goes on. If you find that you start to have issues, make sure you're using the latest versions of every script.
