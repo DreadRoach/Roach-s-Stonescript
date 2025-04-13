@@ -1,0 +1,5 @@
+/* This script is used for importing the other scripts in this collection on mobile. To use it, COPY AND PASTE the script into your Mind Stone, then uncomment any scripts you want to use. */
+
+sys.SetFileUrl("https://github.com/DreadRoach/Roach-s-Stonescript/blob/main")
+
+/* import Automation/Generic */

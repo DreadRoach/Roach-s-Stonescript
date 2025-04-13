@@ -1,1 +1,32 @@
-/* This is a generic automation script, designed to be usable in any location without being optimized for any of them. It included rules that are needed in more than one location, and a basic set of equipment controls that will keep you alive in easy levels. To use this script, import or paste it above any automation scripts that are level-dependent. You can also copy and paste specific sections, if you only want certain effects. */
+/* This is a generic automation script, designed to be as usable as possible without making rulesets for specific areas. It's meant to be used for universal cases and as a fallback when other script fail. To use this script, import or paste it above all other automation scripts. */
+
+/* This line is needed to be able to open the Mindstone mid-level on mobile. On PC, you can press M instead. */
+import UI/MindstoneButton
+
+/* Procs a potion if your health goes under 7, for basic death prevention. Depending on the difficulty you're playing at, you may need to increase this. */
+?hp < 7
+ activate potion
+
+/* Tells your character what to equip when nothing else is going on. */
+equipR ourobouros
+equipL triskelion
+
+/* Handles equipment changes for the right hand depending on different circumstances. If any foes are on screen, a shield is raised, and replaced if needed for special circumstances. */
+?foe.distance < 9999
+ ?foe.distance <= 16 & foe.distance >= 11
+  ?foe.armor >= 1 | foe = immune_to_ranged
+   equipR dash
+ :?foe.distance =< 5 & foe.armor => 1
+   equip heavy hammer
+ :
+  equipR shield ah
+
+/* Handles equipment changes for the left hand depending on different circumstances. */
+?pickup.distance <= 20 & pickup.distance < foe.distance
+ equipL star
+:?foe.distance <= 5 & foe.armor <= 0 | foe = immune_to_ranged & foe.armor <= 0
+ equipL sword dL
+:?foe.distance <= 20 & foe ! magic_resist
+ equipL wand dL
+:?foe.distance <= 22
+ equipL cross
