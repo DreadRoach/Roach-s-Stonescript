@@ -1,9 +1,11 @@
-/* This is a generic automation script, designed to be as usable as possible without making rulesets for specific areas. It's meant to be used for universal cases and as a fallback when other script fail. To use this script, import or paste it above all other automation scripts. */
+/* This is a generic automation script, designed to be as usable as possible without making rulesets for */
+/* specific areas. It's meant to be used for universal cases and as a fallback when other script fail. */
+/* To use this script, import or paste it above all other automation scripts. */
 
 /* This line is needed to be able to open the Mindstone mid-level on mobile. On PC, you can press M instead. */
 import UI/MindstoneButton
 
-/* Procs a potion if your health goes under 7, for basic death prevention. Depending on the difficulty you're playing at, you may need to increase this. */
+/* Procs a potion if your health goes under 7, for basic death prevention.*/
 ?hp < 7
  activate potion
 
@@ -11,7 +13,7 @@ import UI/MindstoneButton
 equipR ourobouros
 equipL triskelion
 
-/* Handles equipment changes for the right hand depending on different circumstances. If any foes are on screen, a shield is raised, and replaced if needed for special circumstances. This is not optimized for the mine boss, who may require additional code. */
+/* Handles equipment changes for the right hand depending on different circumstances. */
 ?foe.distance < 9999
  ?foe.distance <= 16 & foe.distance >= 11
   ?foe.armor >= 1 | foe = immune_to_ranged
