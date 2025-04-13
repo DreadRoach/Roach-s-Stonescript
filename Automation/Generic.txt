@@ -1,19 +1,19 @@
-/* This is a generic automation script, designed to be as usable as possible without making rulesets for */
-/* specific areas. It's meant to be used for universal cases and as a fallback when other script fail. */
-/* To use this script, import or paste it above all other automation scripts. */
+//Generic automation script for universal & basic use cases.
+//To use, place above all other automation/farming scripts.
 
-/* This line is needed to be able to open the Mindstone mid-level on mobile. On PC, you can press M instead. */
+//Imports the Mindstone Button, needed
+//to edit scripts mid-level on mobile.
 import UI/MindstoneButton
 
-/* Procs a potion if your health goes under 7, for basic death prevention.*/
+//Default healing script.
 ?hp < 7
  activate potion
 
-/* Tells your character what to equip when nothing important is happening. */
+//Sets the default equipment.
 equipR ourobouros
 equipL triskelion
 
-/* Handles equipment changes for the right hand depending on different circumstances. */
+//Changes equipment for the right hand.
 ?foe.distance < 9999
  ?foe.distance <= 16 & foe.distance >= 11
   ?foe.armor >= 1 | foe = immune_to_ranged
@@ -23,10 +23,11 @@ equipL triskelion
  :
   equipR shield ah
 
-/* Handles equipment changes for the left hand depending on different circumstances. */
+//Changes equipment for the left hand.
 ?pickup.distance <= 20 & pickup.distance < foe.distance
  equipL star
-:?foe.distance <= 5 & foe.armor <= 0 | foe = immune_to_ranged & foe.armor <= 0
+:?foe.distance <= 5 & foe.armor <= 0
+^| foe = immune_to_ranged & foe.armor <= 0
  equipL sword dL
 :?foe.distance <= 20 & foe ! magic_resist
  equipL wand dL
