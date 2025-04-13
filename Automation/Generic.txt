@@ -10,7 +10,7 @@ import UI/MindstoneButton
  activate potion
 
 //Sets the default equipment.
-equipR ourobouros
+equipR ouroboros
 equipL triskelion
 
 //Changes equipment for the right hand.
@@ -18,7 +18,7 @@ equipL triskelion
  ?foe.distance <= 16 & foe.distance >= 11
   ?foe.armor >= 1 | foe = immune_to_ranged
    equipR dash
- :?foe.distance =< 5 & foe.armor => 1
+ :?foe.distance <= 5 & foe.armor => 1
    equip heavy hammer
  :
   equipR shield ah
