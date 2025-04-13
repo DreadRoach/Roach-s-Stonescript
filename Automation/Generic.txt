@@ -7,11 +7,11 @@ import UI/MindstoneButton
 ?hp < 7
  activate potion
 
-/* Tells your character what to equip when nothing else is going on. */
+/* Tells your character what to equip when nothing important is happening. */
 equipR ourobouros
 equipL triskelion
 
-/* Handles equipment changes for the right hand depending on different circumstances. If any foes are on screen, a shield is raised, and replaced if needed for special circumstances. */
+/* Handles equipment changes for the right hand depending on different circumstances. If any foes are on screen, a shield is raised, and replaced if needed for special circumstances. This is not optimized for the mine boss, who may require additional code. */
 ?foe.distance < 9999
  ?foe.distance <= 16 & foe.distance >= 11
   ?foe.armor >= 1 | foe = immune_to_ranged
