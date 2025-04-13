@@ -1,8 +1,8 @@
-//Generic automation script for universal & basic use cases.
-//To use, place above all other automation/farming scripts.
+//Generic automation script for universal
+//& basic usage. To use, place above
+//all other automation/farming scripts.
 
-//Imports the Mindstone Button, needed
-//to edit scripts mid-level on mobile.
+//Imports the Mindstone Button (optional).
 import UI/MindstoneButton
 
 //Default healing script.
@@ -24,7 +24,8 @@ equipL triskelion
   equipR shield ah
 
 //Changes equipment for the left hand.
-?pickup.distance <= 20 & pickup.distance < foe.distance
+?pickup.distance <= 20 & pickup.distance
+^< foe.distance
  equipL star
 :?foe.distance <= 5 & foe.armor <= 0
 ^| foe = immune_to_ranged & foe.armor <= 0
