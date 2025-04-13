@@ -1,5 +1,6 @@
 /* This script is used for importing the other scripts in this collection on mobile. To use it, restart Stone Story RPG, then COPY AND PASTE the first line into the Mind Stone. Make sure it's turned on, and load any location. Once you've entered, immediately leave, then open the Mind Stone and paste in any of the import lines you want to use. */
 
-sys.SetFileUrl("https://raw.githubusercontent.com/DreadRoach/Roach-s-Stonescript/refs/heads/main/")
+sys.SetFileUrl(
+^"https://github.com/DreadRoach/Roach-s-Stonescript/main")
 
-import Automation/Generic.txt
+import Automation/Generic
